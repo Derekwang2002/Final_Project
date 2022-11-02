@@ -5,6 +5,4 @@ streamlit
 pillow
 wordcloud
 plotly
-collections
 scipy
-copy
