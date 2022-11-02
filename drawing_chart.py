@@ -196,7 +196,6 @@ def draw_freq_bar(data:pd.DataFrame, color:str, type:str):
     ax.set_facecolor('none')
     st.pyplot(fig)
 
-
 # input dataframe, return dataframe, show map on st.
 def movie_map(data:pd.DataFrame,color_st:str):
     country_codes_file = open('country_code.json')
