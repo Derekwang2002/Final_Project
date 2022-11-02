@@ -1,3 +1,4 @@
+from PIL import Image
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -37,6 +38,8 @@ amazon_prime_df.drop(['date_added', 'country'], axis=1, inplace=True) # almost a
 # ====================================== App content ====================================== #
 st.title('Streaming media platform data app')
 st.markdown('>*by **Wang Xing\'en** & **Zhang Aizhong***')
+title_image = Image.open('streaming.jpeg')
+st.image(title_image, caption='4 main streaming platform')
 head_container = st.container()
 
 #set sidebar
@@ -176,7 +179,7 @@ with tab2:
 with tab3:
 # directors, casts, country count
     st.header('3 Most frequent ...')
-    st.write('Find most valuable person, or coountry with most potential')
+    st.write('Find most valuable person, or coountry with most potential.')
     tab21, tab22, tab23, tab24= st.tabs(['Director', 'Cast', 'Country', 'Map'])
 
     with tab21:
@@ -235,6 +238,7 @@ with st.container():
     st.write('')
 # captions
 with st.container():
+    st.markdown('---')
     st.caption(
         'More information on Kaggle: [Netflix](https://www.kaggle.com/datasets/shivamb/netflix-shows), '
         + '[Disney+](https://www.kaggle.com/datasets/shivamb/disney-movies-and-tv-shows), '
