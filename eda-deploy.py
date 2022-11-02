@@ -103,7 +103,7 @@ static_df = copy.deepcopy(running_df) # unfilted data
 # sidebar container
 container.subheader('Meta Info')
 if_static  = container.checkbox('Static mode')
-container.write('LOGIN: ' + st.experimental_user["email"])
+# container.write('LOGIN: ' + st.experimental_user["email"])
 
 # set filter3 year
 st.write('\n')
