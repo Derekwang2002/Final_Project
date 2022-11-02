@@ -128,21 +128,23 @@ if if_static:
 container.markdown(f'#entities of current dataset: ***{len(running_df.index)}***')
 container.markdown('---')
 
+with st.expander('See title worldcloud'):
+    dct.draw_wordcloud(running_df, img_path, col_range)
 
 # ================================================= Total tab ================================================= #
 tab1, tab2, tab3, tab4 = st.tabs(['OVERVIEW', 'DATE ADDED', 'FREQ COUNT', 'DURATION'])
 
 with tab1:
     st.header('1 Overview')
-    tab01, tab02, tab03 = st.tabs(['Type', 'Title Wordcloud', 'Dataframe'])
+    tab01, tab03 = st.tabs(['Type', 'Dataframe'])
 
     with tab01: 
         st.subheader(f'Types of {platform_filter}')
         dct.draw_dount(running_df, uni_col) # type dount chart
 
-    with tab02:
-        st.subheader("Wordcloud")
-        dct.draw_wordcloud(running_df, img_path, col_range)
+    # with tab02:
+    #     st.subheader("Wordcloud")
+    #     dct.draw_wordcloud(running_df, img_path, col_range)
 
     with tab03:
         st.write(running_df.drop(['description'], axis=1))
@@ -174,6 +176,7 @@ with tab2:
 with tab3:
 # directors, casts, country count
     st.header('3 Most frequent ...')
+    st.write('Find most valuable person, or coountry with most potential')
     tab21, tab22, tab23, tab24= st.tabs(['Director', 'Cast', 'Country', 'Map'])
 
     with tab21:
@@ -207,7 +210,8 @@ with tab3:
 with tab4:
     # Duration
     st.header('4 Duration distribution')
-    st.write('How does duration of content distribute? \n Does more concentrated means more audience or just a regular?')
+    st.write('How does duration of content distribute? ')
+    st.write('Does more concentrated means more audience or just a regular?')
     st.caption('TBN: Some of the chosen dataset do not have \'Movie\' or \'TV Show\' info.')
     tab31, tab32 = st.tabs(['Movie Duration', 'TV Seansons'])
 
@@ -239,5 +243,5 @@ with st.container():
         + '*(all usability is 10.0)*'
     )
     st.caption('E-mail of author: derekwang0282@gmail.com, zhangaizhong20@163.com')
-    st.caption('Github page: ')
+    st.caption('Github page: [Derek Wang](https://github.com/Derekwang2002)')
     st.caption('Last update date: 2022.11.1')
