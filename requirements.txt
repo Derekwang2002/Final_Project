@@ -2,7 +2,7 @@ numpy
 pandas
 matplotlib
 streamlit
-PIL
+pillow
 wordcloud
 json
 plotly
