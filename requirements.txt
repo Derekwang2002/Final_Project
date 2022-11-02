@@ -4,7 +4,6 @@ matplotlib
 streamlit
 pillow
 wordcloud
-json
 plotly
 collections
 scipy
