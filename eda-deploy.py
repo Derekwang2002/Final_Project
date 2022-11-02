@@ -238,6 +238,6 @@ with st.container():
         + '[Hulu](https://www.kaggle.com/datasets/shivamb/hulu-movies-and-tv-shows). '
         + '*(all usability is 10.0)*'
     )
-    st.caption('E-mail of author: derekwang0282@gmail.com')
+    st.caption('E-mail of author: derekwang0282@gmail.com, zhangaizhong20@163.com')
     st.caption('Github page: ')
     st.caption('Last update date: 2022.11.1')
