@@ -67,7 +67,7 @@ def draw_wordcloud(data:pd.DataFrame, img_path:str, color_range:str):
     # str(list(data['title'])).replace(',', '').replace('[', '').replace("'", '').replace(']', '').replace('.', '')
     
     # shape of the wordcloud
-    mask = np.array(Image.open(img_path), )
+    mask = np.array(Image.open(img_path))
     wordcloud = WordCloud(background_color = 'white', colormap=col_map, max_words = 150, mask = mask).generate(text)
     ax = wordcloud
 
