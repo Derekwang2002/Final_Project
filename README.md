@@ -1,7 +1,7 @@
 # Streaming Platform Data App
 ***Team 27 - MISY225 Final Project***
 
->by: Wang Xing'en & Zhang Aizhong
+>by: Wang Xing'en & Zhang Aizhong  
 >create date: 2022-11-03
 
 ## Project Introduction
@@ -16,17 +16,17 @@ Next, let's start the journey!
 ## Dataset Description
 - About contents inforamtion on certain streaming platform.
 - Variables(columns):
-  - **show_id**: Unique ID for every Movie / TV Show.
-  - **type**: Identifier - A Movie or TV Show.
-  - **title**: Title of the Movie / TV Show.
-  - **director**: Director of the Movie / TV Show.
-  - **cast**: Actors involved in the Movie / TV Show.
-  - **country**: Country where the Movie / TV Show was produced.
-  - **date_added**: Date it was added on the certain platform.
-  - **release_year**: Actual Release year of the Movie / TV Show.
-  - **rating**: TV Rating of the Movie / TV Show.
-  - **duration**: Total Duration - in minutes for movies or number of seasons for TV Shows.
-  - **listed_in**: Generes of contnts.
+  - `show_id`: Unique ID for every Movie / TV Show.
+  - `type`: Identifier - A Movie or TV Show.
+  - `title`: Title of the Movie / TV Show.
+  - `director`: Director of the Movie / TV Show.
+  - `cast`: Actors involved in the Movie / TV Show.
+  - `country`: Country where the Movie / TV Show was produced.
+  - `date_added`: Date it was added on the certain platform.
+  - `release_year`: Actual Release year of the Movie / TV Show.
+  - `rating`: TV Rating of the Movie / TV Show.
+  - `duration`: Total Duration - in minutes for movies or number of seasons for TV Shows.
+  - `listed_in`: Generes of contnts.
   - `description`: The summary description
 - Source of data set: *Kaggle.com*, Includes:
   - [Netflix](https://www.kaggle.com/datasets/shivamb/netflix-shows)
@@ -55,31 +55,36 @@ Next, let's start the journey!
 
 - Main Body  
   From the top of the page, there are: title, author, a picture, a title wordcloud in the expander.  
-  And next is or EDA ouput  
+  And next is our EDA ouput:  
   1. Overview:
     - A dount pie chart of percentage of type info.
     - Raw dataframe.
+
   2. Add date chart
     - A stacked line chart(categoried in type) of number of added contents by months.
     - A heatmap of number of added contents by months in each year.
+
   3. Freuency counts
     - Top 10 frequent directors.
     - Top 10 frequent cats.
     - Top 10 frequent countries.
     - Frequency of country counts on map.
+
   4. Duration distribution
     - Distribution of movie duration in minutes.
     - Bar chart of most freunt duration seasons of tv shows.  
+
+
   Captions of related information.
 - [Streamlit App Entrance](https://derekwang2002-final-project-eda-deploy-sqq3hk.streamlit.app/)
 
 ## Findings of EDA
 - Questions:
-  - Strategies of certain platform?
-  - Best timing for content producer to publish thier product?
-  - Which director/cast tend to have more business value?
-  - What is the major market country for the platform or where is the potential market country?
-  - How duartion distributed, and why? Could that distribution provide any useful informations?
+  - **Strategies** of certain platform?
+  - Best **timing** for content producer to publish thier product?
+  - Which director/cast tend to have more **business value**?
+  - What is the **major market country** for the platform or where is the **potential market country**?
+  - How **duartion distributed**, and why? Could that distribution provide any useful informations?
 - Answers:
   - pass
 
