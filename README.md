@@ -7,7 +7,7 @@
 | ![Netflix](netflix_icon.jpeg)   | ![Disney](disney_icon.jpeg)   | ![Prime](amazon_icon.png)   | ![Hulu](hulu_icon.jpg)   |
 | --- | --- | --- | --- |
 
-<center class="half">
+<center class="fourth">
     <img src="netflix_icon.jpeg" width="150"/>
     <img src="disney_icon.jpeg" width="150"/>
     <img src="amazon_icon.png" width="150"/>
