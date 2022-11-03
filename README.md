@@ -54,15 +54,17 @@ Next, let's start the journey!
     - muliselect: choose the genres of contents(default none, select all genres).
 
 - Main Body  
-  From the top of the page, there are: title, author, a picture, a title wordcloud in the expander.  
+  From the top of the page, there are: *title, author, a picture, a title wordcloud in the expander*.  
   And next is our EDA ouput:  
   1. **Overview**:
     - A dount pie chart of percentage of type info.
     - Raw dataframe.  
 
+
   2. **Add date chart**
     - A stacked line chart(categoried in type) of number of added contents by months.
     - A heatmap of number of added contents by months in each year.  
+
 
   3. **Freuency counts**
     - Top 10 frequent directors.
@@ -70,9 +72,11 @@ Next, let's start the journey!
     - Top 10 frequent countries.
     - Frequency of country counts on map.  
 
+
   4. **Duration distribution**
     - Distribution of movie duration in minutes.
     - Bar chart of most freunt duration seasons of tv shows.  
+
 
 
   Captions of related information.
