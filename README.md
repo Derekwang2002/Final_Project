@@ -13,7 +13,7 @@
   - [Disney+]()
   - [Amazon Prime]()
   - [Hulu]()
-- [Streamlit App url]
+
   
 ### Guidence of Data App
 - Structure
@@ -22,7 +22,8 @@
   - pass
 - Main Body
   - pass
-  
+- [Streamlit App Entrance]()
+
 ### Findings of EDA
 - Questions:
   - pass
