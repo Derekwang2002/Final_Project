@@ -56,21 +56,21 @@ Next, let's start the journey!
 - Main Body  
   From the top of the page, there are: title, author, a picture, a title wordcloud in the expander.  
   And next is our EDA ouput:  
-  1. Overview:
+  1. **Overview**:
     - A dount pie chart of percentage of type info.
-    - Raw dataframe.
+    - Raw dataframe.  
 
-  2. Add date chart
+  2. **Add date chart**
     - A stacked line chart(categoried in type) of number of added contents by months.
-    - A heatmap of number of added contents by months in each year.
+    - A heatmap of number of added contents by months in each year.  
 
-  3. Freuency counts
+  3. **Freuency counts**
     - Top 10 frequent directors.
     - Top 10 frequent cats.
     - Top 10 frequent countries.
-    - Frequency of country counts on map.
+    - Frequency of country counts on map.  
 
-  4. Duration distribution
+  4. **Duration distribution**
     - Distribution of movie duration in minutes.
     - Bar chart of most freunt duration seasons of tv shows.  
 
@@ -81,9 +81,9 @@ Next, let's start the journey!
 ## Findings of EDA
 - Questions:
   - **Strategies** of certain platform?
-  - Best **timing** for content producer to publish thier product?
+  - Best **timing** for content producer to publish thier products?
   - Which director/cast tend to have more **business value**?
-  - What is the **major market country** for the platform or where is the **potential market country**?
+  - What are the **major market countries** for the platform or where are the **potential market countries**?
   - How **duartion distributed**, and why? Could that distribution provide any useful informations?
 - Answers:
   - pass
