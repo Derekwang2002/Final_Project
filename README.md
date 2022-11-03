@@ -4,7 +4,8 @@
 >by: Wang Xing'en & Zhang Aizhong  
 >create date: 2022-11-03
 
-| ![Netflix](netflix_icon.jpg) | ![Disney](disney_icon.jpeg) | ![Prime](amazon_icon.png) | ![Hulu](hulu_icon.jpg) |
+| ![Netflix](netflix_icon.jpg)   | ![Disney](disney_icon.jpeg)   | ![Prime](amazon_icon.png)   | ![Hulu](hulu_icon.jpg)   |
+| --- | --- | --- | --- |
 
 ## Project Introduction
 Streaming platforms is playing an more important part of people's daily entretains. It encouraged content producer to perform more high quality contents, e.g., Gmae of Thrones, The card house, or Love, Death, Robot...
