@@ -134,36 +134,40 @@ def draw_date_line(data:pd.DataFrame, color:list):
 
 
 def draw_heatmap(data:pd.DataFrame, color:str):
-    df_date = data[['date_added']].dropna()
-    df_date['year'] = df_date['date_added'].apply(lambda x : x.split(', ')[-1])
-    df_date['month'] = df_date['date_added'].apply(lambda x : x.lstrip().split(' ')[0])
+    try:
+        df_date = data[['date_added']].dropna()
+        df_date['year'] = df_date['date_added'].apply(lambda x : x.split(', ')[-1])
+        df_date['month'] = df_date['date_added'].apply(lambda x : x.lstrip().split(' ')[0])
 
-    month_order = [
-        'January', 
-        'February', 
-        'March', 
-        'April', 
-        'May', 
-        'June', 
-        'July', 
-        'August', 
-        'September', 
-        'October', 
-        'November', 
-        'December'
-    ][::-1]
+        month_order = [
+            'January', 
+            'February', 
+            'March', 
+            'April', 
+            'May', 
+            'June', 
+            'July', 
+            'August', 
+            'September', 
+            'October', 
+            'November', 
+            'December'
+        ][::-1]
 
-    ### month of year
-    df_moy = df_date.groupby('year')['month'].value_counts().unstack().fillna(0)[month_order].T
+        ### month of year
+        df_moy = df_date.groupby('year')['month'].value_counts().unstack().fillna(0)[month_order].T
 
-    fig_hmp, ax = plt.subplots(figsize=(15, 10), dpi=300)
+        fig_hmp, ax = plt.subplots(figsize=(15, 10), dpi=300)
 
-    hmp = ax.pcolormesh(df_moy, cmap=color, edgecolors='white', linewidths=2) # heatmap
-    ax.set_xticks(np.arange(0.5, len(df_moy.columns), 1), df_moy.columns, fontsize=14)
-    ax.set_yticks(np.arange(0.5, len(df_moy.index), 1), df_moy.index, fontsize=15)
+        hmp = ax.pcolormesh(df_moy, cmap=color, edgecolors='white', linewidths=2) # heatmap
+        ax.set_xticks(np.arange(0.5, len(df_moy.columns), 1), df_moy.columns, fontsize=14)
+        ax.set_yticks(np.arange(0.5, len(df_moy.index), 1), df_moy.index, fontsize=15)
 
-    fig_hmp.colorbar(hmp, ax=ax)
-    st.pyplot(fig_hmp)
+        fig_hmp.colorbar(hmp, ax=ax)
+        st.pyplot(fig_hmp)
+    except:
+        st.write('Oops, heatmap is not available due to lacking of enough month info!')
+    
 
 # get single entity series
 def single_serires(series):
@@ -197,7 +201,7 @@ def draw_freq_bar(data:pd.DataFrame, color:str, type:str):
     st.pyplot(fig)
 
 # input dataframe, return dataframe, show map on st.
-def movie_map(data:pd.DataFrame,color_st:str):
+def movie_map(data:pd.DataFrame, color_st:str):
     country_codes_file = open('country_code.json')
     country_codes = json.load(country_codes_file)
     country_codes_file.close()

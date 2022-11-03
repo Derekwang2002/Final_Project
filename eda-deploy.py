@@ -45,7 +45,7 @@ head_container = st.container()
 
 #set sidebar
 container = st.sidebar.container()
-st.sidebar.subheader('Filters')
+# st.sidebar.title('Filters')
 
 # set filter2 - choose platform 
 platform_filter = st.sidebar.radio(
@@ -84,7 +84,7 @@ elif platform_filter == 'All in one':
         'Greys', 'Greys', '#555555', 'all-shape.png'
     )
 
-# when platform is chose:
+# when platform is chose: (a little mass but it's just too costly to regulate the color variable's name) 
 #   running_df - dataframe 
 #   uni_col - color of dount chart
 #   col - color of bar chart
@@ -104,28 +104,42 @@ img_path = df_color.img_path
 running_df.reset_index(inplace=True)
 static_df = copy.deepcopy(running_df) # unfilted data
 
-# sidebar container
-container.subheader('Meta Info')
-if_static  = container.checkbox('Static mode')
-# container.write('LOGIN: ' + st.experimental_user["email"])
+# set filter3 -year
+st.sidebar.markdown('---')
 
-# set filter3 year
-st.write('\n')
 rel_year_df = running_df.release_year
 rel_year = st.sidebar.select_slider(
-    'Starting years of content(released)', 
-    np.arange(min(rel_year_df), max(rel_year_df)+1)
+    'Starting released year', 
+    np.arange(min(rel_year_df), max(rel_year_df)+1),
+    help='Click "Turn over" button to set the selected number as the stopping released year',
 )
-running_df = running_df[running_df['release_year'] >= rel_year]
+# set filter3 checkbox
+if_turn = st.sidebar.checkbox('Turn over')
+
+if if_turn:
+    running_df = running_df[running_df['release_year'] <= rel_year]
+else:
+    running_df = running_df[running_df['release_year'] >= rel_year]
 
 # set filter4 
-st.write('\n')
+st.sidebar.markdown('---')
 list_in = dct.single_serires(running_df.listed_in.apply(lambda x: str(x))).unique().tolist()
-list_options = st.sidebar.multiselect('Genres you interested: ', list_in)
+list_options = st.sidebar.multiselect(
+    'Genres you interested: ', list_in, 
+    help='Default choice is empty, which means all is selected.',
+)
+
 for i in list_options:
     running_df = running_df[running_df.listed_in.str.contains(i)]
 
-# put in to container
+for i in range(10):
+    st.sidebar.write('\n')
+
+# go back to sidebar container
+container.title('Meta Info')
+if_static  = container.checkbox('Static mode')
+# if below code is added, then user must be login and may cause cofused in mobile devices.
+# container.write('LOGIN: ' + st.experimental_user["email"])
 if if_static:
     running_df = static_df
 
@@ -168,14 +182,14 @@ with tab2:
             st.subheader(f'{platform_filter} contents added date - Line plot')
             dct.draw_date_line(running_df, col_range[::-1])
         else:
-            st.markdown('***The add-date info is not available for amazon dataset***, please try another platform')
+            st.markdown('***Oops, the add-date info is not available for amazon dataset***, please try another platform!')
     ## heatmap of (year and month)
     with tab12:
         if platform_filter != 'Amazon Prime':
             st.subheader(f'{platform_filter} contents added date - Heatmap')
             dct.draw_heatmap(running_df, cmap)
         else:
-            st.markdown('***The add-date info is not available for amazon dataset***, please try another platform')
+            st.markdown('***Oops, the add-date info is not available for amazon dataset***, please try another platform!')
 
 with tab3:
 # directors, casts, country count
@@ -185,31 +199,31 @@ with tab3:
 
     with tab21:
         if platform_filter != 'Hulu':
-            st.subheader(f'{platform_filter}\'s Top 10 Directors')
+            st.subheader(f'{platform_filter}\'s Top 10(if have) Directors')
             dct.draw_freq_bar(running_df, col, type='director')
         else:
-            st.write('Not available')
+            st.write('Oops, not available due to missing info of director info in current dataset.')
 
     with tab22:
         if platform_filter != 'Hulu':
-            st.subheader(f'{platform_filter}\'s Top 10 Casts')
+            st.subheader(f'{platform_filter}\'s Top 10(if have) Casts')
             dct.draw_freq_bar(running_df, col, type='cast')
         else:
-            st.write('Not available')
+            st.write('Oops, not available due to missing of cast info in current dataset.')
 
     with tab23:
         if platform_filter != 'Amazon Prime':
-            st.subheader(f'{platform_filter}\'s Top 10 Countries')
+            st.subheader(f'{platform_filter}\'s Top 10(if have) Countries')
             dct.draw_freq_bar(running_df, col, type='country')
         else:
-            st.write('Not availeble')
+            st.write('Oops, not availeble due to missing of countries info in current dataset.')
 
     with tab24:
         if platform_filter != 'Amazon Prime':
             st.subheader(f'{platform_filter}\'s Countries map')
             dct.movie_map(running_df, col_scale)
         else:
-            st.write('Not availeble')    
+            st.write('Oops, map is not availeble due to missing of location info in current dataset.')    
 
 with tab4:
     # Duration
@@ -248,5 +262,5 @@ with st.container():
         + '*(all usability is 10.0)*'
     )
     st.caption('E-mail of author: derekwang0282@gmail.com, zhangaizhong20@163.com')
-    st.caption('Github page: [Derek Wang](https://github.com/Derekwang2002)')
-    st.caption('Last update date: 2022.11.1')
+    st.caption('Github page: [Derek Wang](https://github.com/Derekwang2002/Final_Project#streaming-platform-data-app-eda)')
+    st.caption('Last update date: 2022.11.3')

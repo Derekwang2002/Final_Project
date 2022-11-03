@@ -48,10 +48,10 @@ Structure:
 
 ### Sidebar
 - meta info:
-  - numbers of entities
+  - numbers of entities.
   - 'static' mode choice(which could ignore all filters below).
 - filters:
-  - radio: choose certain streaming platforms.
+  - radio: choose certain streaming platforms.(***TBN: With each choice, the theme color for charts is unique!***)
   - selet_slider: choose the starting released date of contents.
   - muliselect: choose the genres of contents(default none, select all genres).
 
@@ -88,7 +88,7 @@ At the end of the page is captions of related information.
   - Which director/cast tend to have more **business value**?
   - What are the **major market countries** for the platform or where are the **potential market countries**?
   - How **duartion distributed**, and why? Could that distribution provide any useful informations?
-- Answers:
+- Interest conclusions:
   - pass
 
 
