@@ -4,6 +4,8 @@
 >by: Wang Xing'en & Zhang Aizhong  
 >create date: 2022-11-03
 
+![[streaming.jpeg]]
+
 ## Project Introduction
 Streaming platforms is playing an more important part of people's daily entretains. It encouraged content producer to perform more high quality contents, e.g., Gmae of Thrones, The card house, or Love, Death, Robot...
 
@@ -36,7 +38,7 @@ Next, let's start the journey!
 
 
 ## Guidence of Data App
-Structure
+Structure:
 - sidebar: includes meta information of dataset and the filters.
 - main body: Charts that shows different info of dataset, categoried in four types:
   1. Overview
@@ -47,7 +49,7 @@ Structure
 ### Sidebar
 - meta info:
   - numbers of entities
-  - 'static' mode choice(which could ignore all filters).
+  - 'static' mode choice(which could ignore all filters below).
 - filters:
   - radio: choose certain streaming platforms.
   - selet_slider: choose the starting released date of contents.
@@ -77,7 +79,7 @@ And next is our EDA ouput:
 
 At the end of the page is captions of related information.  
 
-Enjoy! [Streamlit App Entrance](https://derekwang2002-final-project-eda-deploy-sqq3hk.streamlit.app/)
+*Enjoy app!* [*Streamlit App Entrance*](https://derekwang2002-final-project-eda-deploy-sqq3hk.streamlit.app/)
 
 ## Findings of EDA
 - Questions:
