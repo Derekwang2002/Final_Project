@@ -27,7 +27,7 @@ Next, let's start the journey!
   - **rating**: TV Rating of the Movie / TV Show.
   - **duration**: Total Duration - in minutes for movies or number of seasons for TV Shows.
   - **listed_in**: Generes of contnts.
-  - **description**: The summary description
+  - `description`: The summary description
 - Source of data set: *Kaggle.com*, Includes:
   - [Netflix](https://www.kaggle.com/datasets/shivamb/netflix-shows)
   - [Disney+](https://www.kaggle.com/datasets/shivamb/disney-movies-and-tv-shows)
