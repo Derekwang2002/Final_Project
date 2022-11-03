@@ -1,4 +1,4 @@
-# Streaming Platform Data App
+# Streaming Platform Data App (EDA)
 ***Team 27 - MISY225 Final Project***
 
 >by: Wang Xing'en & Zhang Aizhong  
@@ -44,39 +44,35 @@ Next, let's start the journey!
     3. Frequency count
     4. Duration distribution
 
-- Sidebar
-  - meta info:
-    - numbers of entities
-    - 'static' mode choice(which could ignore all filters).
-  - filters: 
-    - radio: choose certain streaming platforms.
-    - selet_slider: choose the starting released date of contents.
-    - muliselect: choose the genres of contents(default none, select all genres).
+#### Sidebar
+- meta info:
+  - numbers of entities
+  - 'static' mode choice(which could ignore all filters).
+- filters:
+  - radio: choose certain streaming platforms.
+  - selet_slider: choose the starting released date of contents.
+  - muliselect: choose the genres of contents(default none, select all genres).
 
-- Main Body  
-  From the top of the page, there are: *title, author, a picture, a title wordcloud in the expander*.  
-  And next is our EDA ouput:  
-  1. **Overview**:
-    - A dount pie chart of percentage of type info.
-    - Raw dataframe.  
+#### Main Body  
+From the top of the page, there are: *title, author, a picture, a title wordcloud in the expander*.  
+And next is our EDA ouput:  
+1. **Overview**:
+  - A dount pie chart of percentage of type info.
+  - Raw dataframe.  
 
+2. **Add date chart**
+  - A stacked line chart(categoried in type) of number of added contents by months.
+  - A heatmap of number of added contents by months in each year.  
 
-  2. **Add date chart**
-    - A stacked line chart(categoried in type) of number of added contents by months.
-    - A heatmap of number of added contents by months in each year.  
+3. **Freuency counts**
+  - Top 10 frequent directors.
+  - Top 10 frequent cats.
+  - Top 10 frequent countries.
+  - Frequency of country counts on map.  
 
-
-  3. **Freuency counts**
-    - Top 10 frequent directors.
-    - Top 10 frequent cats.
-    - Top 10 frequent countries.
-    - Frequency of country counts on map.  
-
-
-  4. **Duration distribution**
-    - Distribution of movie duration in minutes.
-    - Bar chart of most freunt duration seasons of tv shows.  
-
+4. **Duration distribution**
+  - Distribution of movie duration in minutes.
+  - Bar chart of most freunt duration seasons of tv shows.  
 
 
   Captions of related information.
