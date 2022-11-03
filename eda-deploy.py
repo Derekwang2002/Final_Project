@@ -8,6 +8,7 @@ import copy
 from drawing_chart import color_set
 import drawing_chart as dct
 
+# If intend to use following line, please unavailable line15 first.
 # dct.add_bg_from_local('background.jpeg')
 
 plt.style.use('seaborn')
