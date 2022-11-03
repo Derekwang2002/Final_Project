@@ -64,22 +64,22 @@ Structure:
 From the top of the page, there are: *title, author, a picture, a title wordcloud in the expander*.  
 And next is our EDA ouput:  
 1. **Overview**:
-  - A dount pie chart of percentage of type info.
-  - Raw dataframe.  
+    - A dount pie chart of percentage of type info.
+    - Raw dataframe.  
 
 2. **Add date chart**
-  - A stacked line chart(categoried in type) of number of added contents by months.
-  - A heatmap of number of added contents by months in each year.  
+    - A stacked line chart(categoried in type) of number of added contents by months.
+    - A heatmap of number of added contents by months in each year.  
 
 3. **Freuency counts**
-  - Top 10 frequent directors.
-  - Top 10 frequent cats.
-  - Top 10 frequent countries.
-  - Frequency of country counts on map.  
+    - Top 10 frequent directors.
+    - Top 10 frequent cats.
+    - Top 10 frequent countries.
+    - Frequency of country counts on map.  
 
 4. **Duration distribution**
-  - Distribution of movie duration in minutes.
-  - Bar chart of most freunt duration seasons of tv shows.  
+    - Distribution of movie duration in minutes.
+    - Bar chart of most freunt duration seasons of tv shows.  
 
 
 At the end of the page is captions of related information.  
