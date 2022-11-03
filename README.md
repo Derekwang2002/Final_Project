@@ -4,8 +4,15 @@
 >by: Wang Xing'en & Zhang Aizhong  
 >create date: 2022-11-03
 
-| ![Netflix](netflix_icon.jpg)   | ![Disney](disney_icon.jpeg)   | ![Prime](amazon_icon.png)   | ![Hulu](hulu_icon.jpg)   |
+| ![Netflix](netflix_icon.jpeg)   | ![Disney](disney_icon.jpeg)   | ![Prime](amazon_icon.png)   | ![Hulu](hulu_icon.jpg)   |
 | --- | --- | --- | --- |
+
+<center class="half">
+    <img src="netflix_icon.jpeg" width="150"/>
+    <img src="disney_icon.jpeg" width="150"/>
+    <img src="amazon_icon.png" width="150"/>
+    <img src="hulu_icon.jpg" width="150"/>
+</center>
 
 ## Project Introduction
 Streaming platforms is playing an more important part of people's daily entretains. It encouraged content producer to perform more high quality contents, e.g., Gmae of Thrones, The card house, or Love, Death, Robot...

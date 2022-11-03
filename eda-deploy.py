@@ -43,7 +43,7 @@ st.markdown('>***Exploratory Data Analysis** by **Wang Xing\'en** & **Zhang Aizh
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.image('netflix_icon.jpg')
+    st.image('netflix_icon.jpeg')
 with col2:
     st.image('disney_icon.jpeg')  
 with col3:
