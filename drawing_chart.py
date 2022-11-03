@@ -266,7 +266,7 @@ def show_number(data:pd.DataFrame, color_str:str):
     fig = go.Figure(data, layout=layout)
     st.plotly_chart(fig)
 
-
+# this may not be used, however, you can have a try.
 import base64
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
