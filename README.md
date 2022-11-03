@@ -36,15 +36,15 @@ Next, let's start the journey!
 
 
 ## Guidence of Data App
-- Structure
-  - sidebar: includes meta information of dataset and the filters.
-  - main body: Charts that shows different info of dataset, categoried in four types:
-    1. Overview
-    2. Add date chart
-    3. Frequency count
-    4. Duration distribution
+Structure
+- sidebar: includes meta information of dataset and the filters.
+- main body: Charts that shows different info of dataset, categoried in four types:
+  1. Overview
+  2. Add date chart
+  3. Frequency count
+  4. Duration distribution
 
-#### Sidebar
+### Sidebar
 - meta info:
   - numbers of entities
   - 'static' mode choice(which could ignore all filters).
@@ -53,7 +53,7 @@ Next, let's start the journey!
   - selet_slider: choose the starting released date of contents.
   - muliselect: choose the genres of contents(default none, select all genres).
 
-#### Main Body  
+### Main Body  
 From the top of the page, there are: *title, author, a picture, a title wordcloud in the expander*.  
 And next is our EDA ouput:  
 1. **Overview**:
@@ -75,8 +75,9 @@ And next is our EDA ouput:
   - Bar chart of most freunt duration seasons of tv shows.  
 
 
-  Captions of related information.
-- [Streamlit App Entrance](https://derekwang2002-final-project-eda-deploy-sqq3hk.streamlit.app/)
+At the end of the page is captions of related information.  
+
+Enjoy! [Streamlit App Entrance](https://derekwang2002-final-project-eda-deploy-sqq3hk.streamlit.app/)
 
 ## Findings of EDA
 - Questions:
