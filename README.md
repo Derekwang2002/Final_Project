@@ -4,7 +4,7 @@
 >by: Wang Xing'en & Zhang Aizhong  
 >create date: 2022-11-03
 
-![[streaming.jpeg]]
+![icons](Final_Project/streaming.jpeg)
 
 ## Project Introduction
 Streaming platforms is playing an more important part of people's daily entretains. It encouraged content producer to perform more high quality contents, e.g., Gmae of Thrones, The card house, or Love, Death, Robot...
