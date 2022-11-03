@@ -38,9 +38,19 @@ amazon_prime_df.drop(['date_added', 'country'], axis=1, inplace=True) # almost a
 
 # ====================================== App content ====================================== #
 st.title('Streaming media platform data app')
-st.markdown('>*by **Wang Xing\'en** & **Zhang Aizhong***')
-title_image = Image.open('streaming.jpeg')
-st.image(title_image, caption='4 main streaming platform')
+st.markdown('>***Exploratory Data Analysis** by **Wang Xing\'en** & **Zhang Aizhong***')
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.image('netflix_icon.jpg')
+with col2:
+    st.image('disney_icon.jpeg')  
+with col3:
+    st.image('amazon_icon.png')
+with col4:
+    st.image('hulu_icon.jpg')
+
 head_container = st.container()
 
 #set sidebar
@@ -103,6 +113,7 @@ img_path = df_color.img_path
 
 running_df.reset_index(inplace=True)
 static_df = copy.deepcopy(running_df) # unfilted data
+static_all_df = pd.concat([netflix_df, disney_plus_df, amazon_prime_df, hulu_df]) # used later
 
 # set filter3 -year
 st.sidebar.markdown('---')
@@ -154,15 +165,28 @@ tab1, tab2, tab3, tab4 = st.tabs(['OVERVIEW', 'DATE ADDED', 'FREQ COUNT', 'DURAT
 
 with tab1:
     st.header('1 Overview')
-    tab01, tab03 = st.tabs(['Type', 'Dataframe'])
+    st.write('A quick overall look. Try to compare the dount with different released year!')
+    st.caption('TBN: "Dataframe" didn\'t includes derciption of content, since it\'s too long to show.')
+    tab01, tab02, tab03 = st.tabs(['Type', 'Backgrounds', 'Dataframe'])
 
     with tab01: 
         st.subheader(f'Types of {platform_filter}')
+        col01, col02 = st.columns(2)
+
+        with col01:
+            movie_perc = running_df.type.value_counts(normalize=True)['Movie']
+            ave_movie_perc = static_all_df.type.value_counts(normalize=True)['Movie']
+            st.metric(f'% of Movies', f'{movie_perc:.2%}', f'{(movie_perc-ave_movie_perc):.2%}')
+        with col02:
+            tv_perc = running_df.type.value_counts(normalize=True)['TV Show']
+            ave_tv_perc = static_all_df.type.value_counts(normalize=True)['TV Show']
+            st.metric(f'% of TV Shows', f'{tv_perc:.2%}', f'{(tv_perc-ave_tv_perc):.2%}')
+
         dct.draw_dount(running_df, uni_col) # type dount chart
 
-    # with tab02:
-    #     st.subheader("Wordcloud")
-    #     dct.draw_wordcloud(running_df, img_path, col_range)
+    with tab02:
+        st.subheader(f'{platform_filter}\'s background information')
+        st.write('A lot') # TBD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!        
 
     with tab03:
         st.write(running_df.drop(['description'], axis=1))
@@ -171,8 +195,7 @@ with tab2:
     # second part
     st.header('2 Add date chart')
     st.write('Best time for producers to release contnets')
-    st.caption('Add date part is not available for amazon dataset')
-
+    st.caption('TBN: Add date part is not available for amazon dataset')
 
     # content added month
     tab11, tab12 = st.tabs(['Line plot', 'Heatmap'])
@@ -195,6 +218,7 @@ with tab3:
 # directors, casts, country count
     st.header('3 Most frequent ...')
     st.write('Find most valuable person, or coountry with most potential.')
+    st.caption('TBN: Country info is not available for amazon dataset')
     tab21, tab22, tab23, tab24= st.tabs(['Director', 'Cast', 'Country', 'Map'])
 
     with tab21:
@@ -248,7 +272,6 @@ with tab4:
 
 # End of the page
 with st.container():
-    st.write('')
     st.write('')
     st.write('')
 # captions

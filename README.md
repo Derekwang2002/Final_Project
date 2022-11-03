@@ -4,7 +4,7 @@
 >by: Wang Xing'en & Zhang Aizhong  
 >create date: 2022-11-03
 
-![icons](streaming.jpeg)
+| ![Netflix](netflix_icon.jpg) | ![Disney](disney_icon.jpeg) | ![Prime](amazon_icon.png) | ![Hulu](hulu_icon.jpg) |
 
 ## Project Introduction
 Streaming platforms is playing an more important part of people's daily entretains. It encouraged content producer to perform more high quality contents, e.g., Gmae of Thrones, The card house, or Love, Death, Robot...
@@ -79,7 +79,10 @@ And next is our EDA ouput:
 
 At the end of the page is captions of related information.  
 
-*Enjoy app!* [*Streamlit App Entrance*](https://derekwang2002-final-project-eda-deploy-sqq3hk.streamlit.app/)
+### Somethings to notice befor starting app...
+
+
+*Now, enjoy app! ->* [*Streamlit App Entrance*](https://derekwang2002-final-project-eda-deploy-sqq3hk.streamlit.app/)
 
 ## Findings of EDA
 - Questions:

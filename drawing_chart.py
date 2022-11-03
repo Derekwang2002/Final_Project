@@ -31,7 +31,7 @@ class color_set:
 
 def draw_dount(data:pd.DataFrame, color:str):
     colors = plt.get_cmap(color)(np.linspace(0.7, 0.3, len(data.type.value_counts())))
-    fig, ax = plt.subplots(figsize=(12,6), subplot_kw=dict(aspect="equal"), facecolor='none', edgecolor='none')
+    fig, ax = plt.subplots(figsize=(9,4), subplot_kw=dict(aspect="equal"), facecolor='none', edgecolor='none')
     ax.set_facecolor = 'none'
 
     recipe = data.type.value_counts().index
@@ -53,12 +53,11 @@ def draw_dount(data:pd.DataFrame, color:str):
                     horizontalalignment=horizontalalignment, fontfamily='serif', **kw)
                     # need set facecolor here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    
     st.pyplot(fig)
-
+    
 
 def draw_wordcloud(data:pd.DataFrame, img_path:str, color_range:str):
-    fig, ax = plt.subplots(facecolor='none', edgecolor='none')
+    fig, ax = plt.subplots(facecolor='none', edgecolor='none', figsize=(12,6))
 
     # custom colour map ('#221f1f', '#b20710' are the range of colors)
     col_map = matplotlib.colors.LinearSegmentedColormap.from_list("", color_range) 
@@ -69,7 +68,6 @@ def draw_wordcloud(data:pd.DataFrame, img_path:str, color_range:str):
     # shape of the wordcloud
     mask = np.array(Image.open(img_path))
     wordcloud = WordCloud(background_color = 'white', colormap=col_map, max_words = 150, mask = mask).generate(text)
-    ax = wordcloud
 
     plt.imshow(wordcloud, interpolation = 'bilinear')
     plt.axis('off') # turn off the axis
@@ -168,7 +166,6 @@ def draw_heatmap(data:pd.DataFrame, color:str):
     except:
         st.write('Oops, heatmap is not available due to lacking of enough month info!')
     
-
 # get single entity series
 def single_serires(series):
     stringed = ','.join(series.dropna())
@@ -254,7 +251,7 @@ def movie_duration(data:pd.DataFrame, color_str:str):
     data2_out = data2[(data2['zscore']<-3)|(4<data2['zscore'])]
     x1 = data2_drop['duration']
     fig = ff.create_distplot([x1], ['times'], bin_size=0.7, curve_type='kde', colors=[color_str])#別忘了換顏色
-    fig.update_layout(title_text='Movie time with KDE Distribution')
+    fig.update_layout(title_text='Movie time duration with KDE curve')
     st.plotly_chart(fig)
 
 
@@ -266,7 +263,7 @@ def show_number(data:pd.DataFrame, color_str:str):
     vc1 = vc1.rename(columns = {'duration':'number',"index" : col})
     trace1 = go.Bar(x=vc1[col].astype(int), y=vc1["number"], name="TV Shows", marker=dict(color=color_str))
     data = [trace1]
-    layout = go.Layout(title="Seasons", legend=dict(x=0.1, y=1.1, orientation="h"))
+    layout = go.Layout(title="Tv show seasons duration bar plot", legend=dict(x=0.1, y=1.1, orientation="h"))
     fig = go.Figure(data, layout=layout)
     st.plotly_chart(fig)
 
