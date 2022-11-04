@@ -100,7 +100,7 @@ At the end of the page is captions of related information.
   - How **duartion distributed**, and why? Could that distribution provide any useful informations?
 - Interest conclusions:
   - In general, **movies** takes a larger percentage of all platforms. However, the **tv show** is taking a larger percentage recently, it might be the current strategy for streaming platforms.
-  - Overall, the **contents published** more on last half year. But it is quit different for different dataset you chose. For Disney, the peak appeared in november is caused by its **first-establish add**.
+  - Overall, the **contents published more on last half year**. But it is quit different for different dataset you chose. For Disney, the peak appeared in november is caused by its **first-establish add**.
   - In 2020, there is a **drop** in added content, that may caused by the COVID-19.
   - The **United States has always been the most important market of the platform**, followed by Britain and India. Since the **beginning of the 21st century**, the color of **China, Japan and Egypt** has been deepening, indicating that the film industry of these countries has developed rapidly and quickly stepped onto the international stage. In the future, the film industry of these countries may be more valuable for investment.
   - **Most of the movie duration are between 90 to 110min**, thus such a length may be more popular with audiences. Most of the TV show only have one season. So the director and investor really need to consider whether to make another season for their TV shows
