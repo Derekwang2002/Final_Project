@@ -1,8 +1,8 @@
 # Streaming Media Platform Data App (EDA)
 ***Team 27 - MISY225 Final Project***
 
->by: Wang Xing'en & Zhang Aizhong  
->create date: 2022-11-03  
+>By: Wang Xing'en & Zhang Aizhong  
+>Create date: 2022-11-03  
 >Deployed python file is `eda-deploy.py`, custom define functions are in `drawing_cahrt.py`
 
 <table><tr>
@@ -45,18 +45,18 @@ Next, let's start the journey!
 
 ## Guidence of Data App
 ### Structure:
-- sidebar: includes meta information of dataset and the filters.
-- main body: Charts that shows different info of dataset, categoried in four types:
+- Sidebar: includes meta information of dataset and the filters.
+- Main body: Charts that shows different info of dataset, categoried in four types:
   1. Overview
   2. Add date chart
   3. Frequency count
   4. Duration distribution
 
 ### Sidebar
-- meta info:
+- Meta info:
   - numbers of entities.
   - 'static' mode choice(which could ignore all filters below).
-- filters:
+- Filters:
   - radio: choose certain streaming platforms.
   (***TBN: With each choice of radio, the theme color for charts is unique!***)
   - selet_slider: choose the starting released date of contents.
