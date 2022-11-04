@@ -286,6 +286,45 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
+
+# write information
+def draw_info(platform:str):
+    if platform == 'Netflix':
+        st.markdown(
+            '[Netflix, Inc.](https://www.netflix.com/) is an American subscription streaming service and production company '
+            + 'based in Los Gatos, California. Founded in 1997 by Reed Hastings and Marc Randolph '
+            + 'in Scotts Valley, California, it offers a film and television series library through distribution '
+            + 'deals as well as its own productions, known as Netflix Originals.'
+        )
+    elif platform == 'Disney Plus':
+        st.markdown(
+            '[Disney+](https://www.disneyplus.com/?cid=DSS-Search-Google-71700000070655584-&s_kwcid=AL!8468!3!610598193342!e!!g!!disney%2B&gclid=CjwKCAjw8JKbBhBYEiwAs3sxN9hLMhCafYj6h3i8d1lDT3HLVNlw9rKApF6fmlCQLc8Ww-kjouCkrBoCStUQAvD_BwE&gclsrc=aw.ds)'
+            + ' is an American subscription video on-demand over-the-top streaming service owned and operated by the Media and Entertainment Distribution division of The Walt Disney Company. '
+            + 'The service primarily distributes films and television series produced by The Walt Disney Studios and Walt Disney Television, with dedicated content hubs for the brands '
+            + 'Disney, Pixar, Marvel, Star Wars, and National Geographic, as well as Star in some regions. Original films and television series are also distributed on Disney+. '
+        )
+        st.markdown('You need to know that it is the **biggest stock holder** of *Hulu*, and it was first stablished in November 2019.')
+    elif platform == 'Amazon Prime':
+        st.markdown(
+            '[Amazon Prime Video](https://www.amazon.com/Amazon-Video/b?node=2858778011&ref_=nav_em__aiv_0_2_2_2)'
+            + ' , or simply Prime Video, is an American subscription video on-demand over-the-top streaming and rental service of Amazon offered as a standalone service or as part of Amazon\'s Prime subscription. '
+            + 'The service primarily distributes films and television series produced by Amazon Studios and MGM Holdings or licensed to Amazon, as Amazon Originals, '
+            + 'with the service also hosting content from other providers, content add-ons, live sporting events, and video rental and purchasing services. '
+        )
+    elif platform == 'Hulu':
+        st.markdown(
+            '[Hulu ](https://www.hulu.com/welcome?orig_referrer=https%3A%2F%2Fwww.google.com%2F)'
+            + '(/ˈhuːluː/) is an American subscription streaming service majority-owned by The Walt Disney Company, with Comcast’s NBCUniversal holding a minority stake. '
+            + 'It was launched on October 29, 2007 and it offers a library of films and television series like '
+            + '20th Century Studios, Searchlight Pictures, Disney Television Studios, ABC, Freeform, and FX Networks among others, as well as Hulu original programming.'
+        )
+        st.markdown(
+            'Hulu was initially established as a joint venture between News Corporation and NBC Universal, Providence Equity Partners, '
+            + 'and later The Walt Disney Company, serving as an aggregation of recent episodes of television series from their respective television networks.'
+        )
+    else:
+        st.markdown('This is a merge dataset of all four company, see what is "streaming platform" at [here](https://en.wikipedia.org/wiki/List_of_streaming_media_services)')
     
+
 
 

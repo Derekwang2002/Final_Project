@@ -9,7 +9,7 @@ from drawing_chart import color_set
 import drawing_chart as dct
 
 # If intend to use following line, please unavailable line15 first.
-dct.add_bg_from_local('background3.jpeg')
+dct.add_bg_from_local('bgd.jpeg')
 
 plt.style.use('seaborn')
 # st.set_page_config(page_title='Group 27 Data App', page_icon='🌞')
@@ -205,14 +205,14 @@ with tab1:
             else:
                 st.metric(f'% of TV Shows', f'{0:.2%}', f'{(0-ave_tv_perc):.2%}')
 
-        # try:
-        dct.draw_dount(running_df, uni_col) # type dount chart
-        # except:
-        #     st.write('Oops, not available, something goes wrong')
+        try:
+            dct.draw_dount(running_df, uni_col) # type dount chart
+        except:
+            st.write('Oops, not available, something goes wrong')
 
     with tab02:
         st.subheader(f'{platform_filter}\'s background information')
-        st.write('A lot') # TBD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!        
+        dct.draw_info(platform_filter)   
 
     with tab03:
         st.write(running_df.drop(['description'], axis=1))
@@ -300,6 +300,7 @@ with tab4:
 with st.container():
     st.write('')
     st.write('')
+    st.write('')
 # captions
 with st.container():
     st.markdown('---')
@@ -311,5 +312,10 @@ with st.container():
         + '*(all usability is 10.0)*'
     )
     st.caption('E-mail of author: derekwang0282@gmail.com, zhangaizhong20@163.com')
+    st.caption(
+        'Background Image: Photo by '
+        + '<a href="https://unsplash.com/@evieshaffer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Evie S.</a> on <a href="https://unsplash.com/s/photos/white-background?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+        , unsafe_allow_html=True
+    )
     st.caption('Github page: [Derek Wang](https://github.com/Derekwang2002/Final_Project#streaming-platform-data-app-eda)')
-    st.caption('Last update date: 2022.11.3')
+    st.caption('Copyright © 2022')
