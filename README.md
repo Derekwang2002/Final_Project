@@ -5,15 +5,6 @@
 >Create date: 2022-11-03  
 >Deployed python file is `eda-deploy.py`, custom define functions are in `drawing_cahrt.py`
 
-
-<table><tr>
-<td><img src="netflix_icon.jpeg" width="150"/></td>
-<td><img src="disney_icon.jpeg" width="150"/></td>
-<td><img src="amazon_icon.png" width="150"/></td>
-<td><img src="hulu_icon.jpg" width="150"/></td>
-</tr><table>
-
-
 ## Project Introduction
 Streaming platforms is playing an more important part of people's daily entretains. It encouraged content producer to perform more high quality contents, e.g., Gmae of Thrones, The card house, or Love, Death, Robot...
 
@@ -115,4 +106,9 @@ At the end of the page is captions of related information.
   - Most of the movie duration are between 90 to 110min, thus such a length may be more popular with audiences. Most of the TV show only have one season. So the director and investor really need to consider whether to make another season for their TV shows
 
 
- 
+<table><tr>
+<td><img src="netflix_icon.jpeg" width="150"/></td>
+<td><img src="disney_icon.jpeg" width="150"/></td>
+<td><img src="amazon_icon.png" width="150"/></td>
+<td><img src="hulu_icon.jpg" width="150"/></td>
+</tr><table>
