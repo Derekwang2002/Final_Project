@@ -87,6 +87,12 @@ At the end of the page is captions of related information.
 
 ### Somethings to notice befor starting app...
 
+- Hulu dataset is the slowest due to its wordcloud processing.
+- Picture on top of main body would be super big on mobile phones.
+- Please don't turn on dark mode if you want a better look.
+- There are some missing data in some dataset, be careful.
+- There is a mistake in hulu's raw dataset, which put some of duration info into rating info. And I didn't process it. So, there may exist bias in EDA.
+
 
 *Now, enjoy app! ->* [*Streamlit App Entrance*](https://derekwang2002-final-project-eda-deploy-sqq3hk.streamlit.app/)
 
