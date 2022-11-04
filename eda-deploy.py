@@ -170,6 +170,7 @@ if if_static:
     running_df = static_df
 
 container.markdown(f'#entities of current dataset: ***{len(running_df.index)}***')
+container.markdown('**To keep things looks better, you\'d better keep the light mode on. And pictures may be extremly huge on phones.**')
 container.markdown('---')
 
 with st.expander('See title worldcloud'):

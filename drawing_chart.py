@@ -270,23 +270,6 @@ def show_number(data:pd.DataFrame, color_str:str):
     fig = go.Figure(data, layout=layout)
     st.plotly_chart(fig)
 
-# this may not be used, however, you can have a try.
-import base64
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image_file:
-        encoded_string = base64.b64encode(image_file.read())
-    st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background-image: url(data:image/{"jpeg"};base64,{encoded_string.decode()});
-        background-size: cover
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-    )
-
 # write information
 def draw_info(platform:str):
     if platform == 'Netflix':
@@ -325,6 +308,23 @@ def draw_info(platform:str):
     else:
         st.markdown('This is a merge dataset of all four company, see what is "streaming platform" at [here](https://en.wikipedia.org/wiki/List_of_streaming_media_services)')
     
+# this may not be used, however, you can have a try.
+import base64
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read())
+    st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url(data:image/{"jpeg"};base64,{encoded_string.decode()});
+        background-size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+
 
 
 
