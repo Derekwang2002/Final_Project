@@ -88,6 +88,7 @@ At the end of the page is captions of related information.
 
 ### Somethings to notice befor starting app...
 
+- Map need a longer to show out, please wait for a second.
 - Hulu dataset is the slowest due to its wordcloud processing.
 - Picture on top of main body would be super big on mobile phones.
 - Please don't turn on dark mode if you want a better look.
