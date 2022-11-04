@@ -3,7 +3,8 @@
 
 >By: Wang Xing'en & Zhang Aizhong  
 >Create date: 2022-11-03  
->Deployed python file is [`eda-deploy.py`](https://github.com/Derekwang2002/Final_Project/blob/master/eda-deploy.py), custom define functions are in [`drawing_cahrt.py`](https://github.com/Derekwang2002/Final_Project/blob/master/drawing_chart.py)
+>Deployed python file is [`eda-deploy.py`](https://github.com/Derekwang2002/Final_Project/blob/master/eda-deploy.py), custom define functions are in [`drawing_cahrt.py`](https://github.com/Derekwang2002/Final_Project/blob/master/drawing_chart.py)  
+>Slides is [`team27.pdf`](https://github.com/Derekwang2002/Final_Project/blob/master/team27.pdf)
 
 ## Project Introduction
 Streaming platforms is playing an more important part of people's daily entretains. It encouraged content producer to perform more high quality contents, e.g., Gmae of Thrones, The card house, or Love, Death, Robot...
