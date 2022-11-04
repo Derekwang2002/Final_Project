@@ -5,9 +5,6 @@
 >Create date: 2022-11-03  
 >Deployed python file is `eda-deploy.py`, custom define functions are in `drawing_cahrt.py`
 
-|     |     |     |     |
-| --- | --- | --- | --- |
-| ![Netflix|150](netflix_icon.jpeg) | ![Disney+|150](disney_icon.jpeg) | ![Amazon Prime|150](amazon_icon.png) | ![Hulu|150](hulu_icon.jpg) |
 
 <table><tr>
 <td><img src="netflix_icon.jpeg" width="150"/></td>
