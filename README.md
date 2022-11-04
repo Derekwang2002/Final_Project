@@ -3,6 +3,7 @@
 
 >by: Wang Xing'en & Zhang Aizhong  
 >create date: 2022-11-03
+>Deployed python file is "eda-deploy.py", custom define functions are in "drawing_cahrt.py"
 
 <table><tr>
 <td><img src="netflix_icon.jpeg" width="150"/></td>
