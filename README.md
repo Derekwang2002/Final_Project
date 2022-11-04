@@ -5,12 +5,16 @@
 >Create date: 2022-11-03  
 >Deployed python file is `eda-deploy.py`, custom define functions are in `drawing_cahrt.py`
 
+|---|---|---|---|
+|![Netflix](netflix_icon.jpeg)|![Disney+](disney_icon.jpeg)|![Amazon Prime](amazon_icon.png)|![Hulu](hulu_icon.jpg)|
+
 <table><tr>
 <td><img src="netflix_icon.jpeg" width="150"/></td>
 <td><img src="disney_icon.jpeg" width="150"/></td>
 <td><img src="amazon_icon.png" width="150"/></td>
 <td><img src="hulu_icon.jpg" width="150"/></td>
 </tr><table>
+
 
 ## Project Introduction
 Streaming platforms is playing an more important part of people's daily entretains. It encouraged content producer to perform more high quality contents, e.g., Gmae of Thrones, The card house, or Love, Death, Robot...
