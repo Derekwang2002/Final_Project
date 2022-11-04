@@ -1,18 +1,18 @@
-from PIL import Image
 import numpy as np
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import copy
+import re
 
 from drawing_chart import color_set
 import drawing_chart as dct
 
 # If intend to use following line, please unavailable line15 first.
-# dct.add_bg_from_local('background.jpeg')
+dct.add_bg_from_local('background3.jpeg')
 
 plt.style.use('seaborn')
-st.set_page_config(page_title='Group 27 Data App', page_icon='🌞')
+# st.set_page_config(page_title='Group 27 Data App', page_icon='🌞')
 
 # read files
 netflix_df = pd.read_csv('netflix_titles.csv')
@@ -22,17 +22,13 @@ amazon_prime_df = pd.read_csv('amazon_prime_titles.csv')
 
 
 # data cleaning 
-# for rating, NaN may means 'no limit'
 # (I believe this is just for sfaty but not necessary, cauz you may lose usful info)
 netflix_df.dropna(subset=['duration', 'date_added'], inplace=True)
-netflix_df.rating.fillna('no_limit', inplace=True)
 
 disney_plus_df.dropna(subset=['date_added'], inplace=True)
-disney_plus_df.rating.fillna('no_limit', inplace=True)
 
 hulu_df.dropna(subset=['date_added'], inplace=True)
 
-amazon_prime_df.rating.fillna('no_limit', inplace=True) 
 amazon_prime_df.drop(['date_added', 'country'], axis=1, inplace=True) # almost all is NaN
 
 
@@ -42,14 +38,10 @@ st.markdown('>***Exploratory Data Analysis** by **Wang Xing\'en** & **Zhang Aizh
 
 col1, col2, col3, col4 = st.columns(4)
 
-with col1:
-    st.image('netflix_icon.jpeg')
-with col2:
-    st.image('disney_icon.jpeg')  
-with col3:
-    st.image('amazon_icon.png')
-with col4:
-    st.image('hulu_icon.jpg')
+col1.image('netflix_icon.jpeg')
+col2.image('disney_icon.jpeg')  
+col3.image('amazon_icon.png')
+col4.image('hulu_icon.jpg')
 
 head_container = st.container()
 
@@ -134,7 +126,7 @@ else:
 
 # set filter4 
 st.sidebar.markdown('---')
-list_in = dct.single_serires(running_df.listed_in.apply(lambda x: str(x))).unique().tolist()
+list_in = dct.single_serires(running_df.listed_in.apply(lambda x: str(x))).unique()
 list_options = st.sidebar.multiselect(
     'Genres you interested: ', list_in, 
     help='Default choice is empty, which means all is selected.',
@@ -143,7 +135,30 @@ list_options = st.sidebar.multiselect(
 for i in list_options:
     running_df = running_df[running_df.listed_in.str.contains(i)]
 
-for i in range(10):
+# set filter5
+col_rating_1, col_rating_2 = st.sidebar.columns([1,3])
+
+with col_rating_1:
+    st.write('\n')
+    st.write('\n')
+    rating_check = st.checkbox('Wake', key='mute')
+
+with col_rating_2: 
+    rating = running_df.rating.dropna().apply(lambda x: str(x))
+    rating_filted = rating[rating.apply(lambda x: re.search(r'\d\s\w', x) is None) & rating.apply(lambda x: re.search(r'^\d*\d$', x) is None)]
+    rating_in = dct.single_serires(rating_filted).unique()
+
+    rating_options = st.selectbox(
+        'rating you interested: ', rating_in, 
+        help='Click button left to wake up the selector',
+        disabled= not st.session_state.mute,
+    )
+
+if rating_check:
+    running_df.dropna(subset=['rating'], inplace=True)
+    running_df = running_df[running_df.rating.str.contains(rating_options)]
+
+for i in range(10): # to set some space at the ene of the sidebar
     st.sidebar.write('\n')
 
 # go back to sidebar container
@@ -174,15 +189,26 @@ with tab1:
         col01, col02 = st.columns(2)
 
         with col01:
-            movie_perc = running_df.type.value_counts(normalize=True)['Movie']
             ave_movie_perc = static_all_df.type.value_counts(normalize=True)['Movie']
-            st.metric(f'% of Movies', f'{movie_perc:.2%}', f'{(movie_perc-ave_movie_perc):.2%}')
-        with col02:
-            tv_perc = running_df.type.value_counts(normalize=True)['TV Show']
-            ave_tv_perc = static_all_df.type.value_counts(normalize=True)['TV Show']
-            st.metric(f'% of TV Shows', f'{tv_perc:.2%}', f'{(tv_perc-ave_tv_perc):.2%}')
 
+            if str(running_df['type']).__contains__('Movie'):
+                movie_perc = running_df.type.value_counts(normalize=True)['Movie']
+                st.metric(f'% of Movies', f'{movie_perc:.2%}', f'{(movie_perc-ave_movie_perc):.2%}')
+            else:
+                st.metric(f'% of Movies', f'{0:.2%}', f'{0-ave_movie_perc:.2%}')
+
+        with col02:
+            ave_tv_perc = static_all_df.type.value_counts(normalize=True)['TV Show']
+            if str(running_df['type']).__contains__('TV Show'):
+                tv_perc = running_df.type.value_counts(normalize=True)['TV Show']
+                st.metric(f'% of TV Shows', f'{tv_perc:.2%}', f'{(tv_perc-ave_tv_perc):.2%}')
+            else:
+                st.metric(f'% of TV Shows', f'{0:.2%}', f'{(0-ave_tv_perc):.2%}')
+
+        # try:
         dct.draw_dount(running_df, uni_col) # type dount chart
+        # except:
+        #     st.write('Oops, not available, something goes wrong')
 
     with tab02:
         st.subheader(f'{platform_filter}\'s background information')

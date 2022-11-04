@@ -1,4 +1,4 @@
-# Streaming Platform Data App (EDA)
+# Streaming Media Platform Data App (EDA)
 ***Team 27 - MISY225 Final Project***
 
 >by: Wang Xing'en & Zhang Aizhong  
@@ -43,7 +43,7 @@ Next, let's start the journey!
 
 
 ## Guidence of Data App
-Structure:
+### Structure:
 - sidebar: includes meta information of dataset and the filters.
 - main body: Charts that shows different info of dataset, categoried in four types:
   1. Overview
@@ -56,7 +56,8 @@ Structure:
   - numbers of entities.
   - 'static' mode choice(which could ignore all filters below).
 - filters:
-  - radio: choose certain streaming platforms.(***TBN: With each choice, the theme color for charts is unique!***)
+  - radio: choose certain streaming platforms.
+  (***TBN: With each choice of radio, the theme color for charts is unique!***)
   - selet_slider: choose the starting released date of contents.
   - muliselect: choose the genres of contents(default none, select all genres).
 

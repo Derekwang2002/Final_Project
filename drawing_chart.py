@@ -51,28 +51,31 @@ def draw_dount(data:pd.DataFrame, color:str):
         kw["arrowprops"].update({"connectionstyle": connectionstyle})
         annotation = ax.annotate(f'{recipe[i]}: {data[i]:.2%} ', xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
                     horizontalalignment=horizontalalignment, fontfamily='serif', **kw)
-                    # need set facecolor here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    # may set facecolor as none here
 
     st.pyplot(fig)
     
 
 def draw_wordcloud(data:pd.DataFrame, img_path:str, color_range:str):
-    fig, ax = plt.subplots(facecolor='none', edgecolor='none', figsize=(12,6))
+    try:
+        fig, ax = plt.subplots(facecolor='none', edgecolor='none', figsize=(12,6))
 
-    # custom colour map ('#221f1f', '#b20710' are the range of colors)
-    col_map = matplotlib.colors.LinearSegmentedColormap.from_list("", color_range) 
-    # text: convert title in df to str then format it. 
-    text = ' '.join(data['title'].tolist())
-    # str(list(data['title'])).replace(',', '').replace('[', '').replace("'", '').replace(']', '').replace('.', '')
-    
-    # shape of the wordcloud
-    mask = np.array(Image.open(img_path))
-    wordcloud = WordCloud(background_color = 'white', colormap=col_map, max_words = 150, mask = mask).generate(text)
+        # custom colour map ('#221f1f', '#b20710' are the range of colors)
+        col_map = matplotlib.colors.LinearSegmentedColormap.from_list("", color_range) 
+        # text: convert title in df to str then format it. 
+        text = ' '.join(data['title'].tolist())
+        # str(list(data['title'])).replace(',', '').replace('[', '').replace("'", '').replace(']', '').replace('.', '')
+        
+        # shape of the wordcloud
+        mask = np.array(Image.open(img_path))
+        wordcloud = WordCloud(background_color = 'white', colormap=col_map, max_words = 150, mask = mask).generate(text)
 
-    plt.imshow(wordcloud, interpolation = 'bilinear')
-    plt.axis('off') # turn off the axis
-    plt.tight_layout(pad=0)
-    st.pyplot(fig) # show on app
+        plt.imshow(wordcloud, interpolation = 'bilinear')
+        plt.axis('off') # turn off the axis
+        plt.tight_layout(pad=0)
+        st.pyplot(fig) # show on app
+    except:
+        st.write('Oops, wordcloud is not available, at least 1 word!')
 
 
 def draw_date_line(data:pd.DataFrame, color:list):
