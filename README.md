@@ -1,5 +1,5 @@
 # Streaming Media Platform Data App (EDA)
-***Team 27 - MISY225 Final Project***
+***MISY225 Final Project***
 
 >By: Wang Xing'en & Zhang Aizhong  
 >Create date: 2022-11-03  
