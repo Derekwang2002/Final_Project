@@ -257,12 +257,14 @@ def movie_duration(data:pd.DataFrame, color_str:str):
     fig.update_layout(title_text='Movie time duration with KDE curve')
     st.plotly_chart(fig)
 
-
+    
 def show_number(data:pd.DataFrame, color_str:str):
+    col = 'season_count'
     tv_data = data[(data['duration'] != "") & (data['type']=='TV Show')]
     data2 = pd.DataFrame(tv_data['duration'].fillna('0').apply(lambda x:float(x.split(' Season')[0])))
     vc1 = data2.duration.value_counts().reset_index()
-    trace1 = go.Bar(x=vc1['index'].astype(int), y=vc1["duration"], name="TV Shows", marker=dict(color=color_str))
+    vc1 = vc1.rename(columns = {'duration':'number',"index" : col})
+    trace1 = go.Bar(x=vc1[col].astype(int), y=vc1["number"], name="TV Shows", marker=dict(color=color_str))
     data = [trace1]
     layout = go.Layout(title="Tv show seasons duration bar plot", legend=dict(x=0.1, y=1.1, orientation="h"))
     fig = go.Figure(data, layout=layout)
