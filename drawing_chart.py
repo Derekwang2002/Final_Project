@@ -262,8 +262,8 @@ def show_number(data:pd.DataFrame, color_str:str):
     tv_data = data[(data['duration'] != "") & (data['type']=='TV Show')]
     data2 = pd.DataFrame(tv_data['duration'].fillna('0').apply(lambda x:float(x.split(' Season')[0])))
     vc1 = data2.duration.value_counts().reset_index()
-    vc1 = vc1.rename(columns = {'duration':'number', 'index':'season_count'})
-    st.write(vc1) # test only
+    vc1 = vc1.rename(columns = {'duration':'number', 'index':'count'})
+    # st.write(vc1) # test only
     trace1 = go.Bar(x=vc1.number, y=vc1['count'].astype(int), name="TV Shows", marker=dict(color=color_str))
     data = [trace1]
     layout = go.Layout(title="Tv show seasons duration bar plot", legend=dict(x=0.1, y=1.1, orientation="h"))
