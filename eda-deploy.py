@@ -315,7 +315,7 @@ with st.container():
     st.caption('E-mail of author: derekwang0282@gmail.com, zhangaizhong20@163.com')
     st.caption(
         'Background Image: Photo by '
-        + '<a href="https://unsplash.com/@evieshaffer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Evie S.</a> on <a href="https://unsplash.com/s/photos/white-background?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+        + '<a href="https://unsplash.com/@evieshaffer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Evie S.</a> on Unsplash'
         , unsafe_allow_html=True
     )
     st.caption('Github page: [Derek Wang](https://github.com/Derekwang2002/Final_Project#streaming-platform-data-app-eda)')
