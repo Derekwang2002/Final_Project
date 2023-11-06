@@ -11,7 +11,7 @@ import drawing_chart as dct
 # If intend to use following line, please unavailable line15 first.
 dct.add_bg_from_local('bgd.jpeg')
 
-plt.style.use('seaborn')
+# plt.style.use('seaborn')
 # st.set_page_config(page_title='Group 27 Data App', page_icon='🌞')
 
 # read files
